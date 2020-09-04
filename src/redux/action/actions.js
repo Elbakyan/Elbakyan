@@ -1,5 +1,7 @@
-import {USER_STATUS_EXIST, USER_STATUS_NO_EXIST} from "../types";
 import {Url} from '../../components/config/Url'
+import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY} from "../types";
+import {POST} from "../../components/config/Requsest";
+
 
 export function userExist() {
     return async (dispach) => {
@@ -12,13 +14,27 @@ export function userExist() {
     }
 }
 
+export function Location() {
+    return async (dispach) => {
+        const response = await fetch(Url.location)
+        const json = await response.json();
+        dispach({
+            type: GET_SIRCLE,
+            payload: json
+        })
+    }
+}
+export function City(e) {
+    return async (dispach) => {
+        let data = new FormData();
+        data.append('id', e.target.selectedIndex+1);
+        POST(Url.city, data).then(data=> {
+            dispach({
+                type: GET_CITY,
+                payload: data
+            })
+        })
 
-// return async function (dispatch) {
-//     try {
-//         const response = await fetch('https://elbakyan.am/Server/corona');
-//         const json = await response.json();
-//         await dispatch({type: USER_STATUS_EXIST, payload: json})
-//     }catch (e){
-//         console.error('ERROR:' + e);
-//     }
-// }
+    }
+}
+

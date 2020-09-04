@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import {Url} from '../config/Url'
 import {Button, ButtonToolbar, Modal} from "rsuite";
 import './Reg.scss';
+import {connect} from "react-redux";
+import {POST} from "../config/Requsest";
+import {City} from "../../redux/action/actions";
 
 
-export default class Reg extends Component {
+ class Reg extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,10 +23,18 @@ export default class Reg extends Component {
     open(event) {
         this.setState({ show: true });
     }
+     SendUserData(e) {
+        e.preventDefault()
+        let data = new FormData(e.target);
+        POST(Url.registration).then(res => {
+            console.log(res)
+        })
+
+
+     }
 
     render() {
         const { overflow, show } = this.state;
-
         return (
             <div className="modal-container">
                 <ButtonToolbar>
@@ -87,31 +99,42 @@ export default class Reg extends Component {
                                         />
                                     </label>
                                 </div>
-                                {/*<div>*/}
-                                {/*    <label className="location">*/}
-                                {/*        <select name="sircle" id="" onChange={this.getCity}>*/}
-                                {/*            {this.state.keys.map((data, id) => {*/}
-                                {/*                return (*/}
-                                {/*                    <option value={data} key={id}>*/}
-                                {/*                        {data}*/}
-                                {/*                    </option>*/}
-                                {/*                );*/}
-                                {/*            })}*/}
-                                {/*        </select>*/}
-                                {/*    </label>*/}
-                                {/*    <div className="margin"></div>*/}
-                                {/*    <label className="location">*/}
-                                {/*        <select name="city">*/}
-                                {/*            {this.state.city.map((data, id) => {*/}
-                                {/*                return (*/}
-                                {/*                    <option value={data} key={id}>*/}
-                                {/*                        {data}*/}
-                                {/*                    </option>*/}
-                                {/*                );*/}
-                                {/*            })}*/}
-                                {/*        </select>*/}
-                                {/*    </label>*/}
-                                {/*</div>*/}
+                                <div>
+                                    <label className="location">
+                                        <select
+                                            name="sircle"
+                                            id=""
+                                            onChange={(e)=> {
+                                            this.props.dispatch(City(e))
+                                            }}
+                                        >
+
+                                            {this.props.location.sircle.map((data, id) => {
+                                                return (
+                                                    <option
+                                                        id={data.id}
+                                                        value={data.name}
+                                                        data-id={data.id}
+                                                    >
+                                                        {data.name}
+                                                    </option>
+                                                );
+                                            })}
+                                        </select>
+                                    </label>
+                                    <div className="margin"></div>
+                                    <label className="location">
+                                        <select name="city">
+                                            {this.props.location.city.map((data, id) => {
+                                                return (
+                                                    <option value={data.name} key={id}>
+                                                        {data.name}
+                                                    </option>
+                                                );
+                                            })}
+                                        </select>
+                                    </label>
+                                </div>
                                 <Button color="violet" type="submit">Գրանցվել</Button>
                             </form>
                         </div>
@@ -124,3 +147,8 @@ export default class Reg extends Component {
 
     }
 }
+const MakeStateToProps = (state) => {
+    return state
+}
+const MainReg = connect(MakeStateToProps)(Reg)
+export default MainReg;

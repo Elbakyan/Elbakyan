@@ -23,14 +23,14 @@ class Header extends Component {
 
     render() {
 
-        if (test == undefined) {
+        if (this.props.user.status == undefined) {
             return ( <Loader size="lg" backdrop content="loading..." vertical /> )
-        } else if (test == false) {
+        } else if (this.props.user.status == false) {
             return (
 
                <AppHeader/>
         )
-        }else if (test == true){
+        }else if (this.props.user.status == true){
             return (
                 <UserHeader/>
             )

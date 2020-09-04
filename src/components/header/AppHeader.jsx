@@ -8,7 +8,12 @@ import Reg from "../reg/Reg"
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class AppHeader extends  Component{
+    constructor(props) {
+        super(props);
+    }
+    getSircle() {
 
+    }
     render() {
 
         return(
