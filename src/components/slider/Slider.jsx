@@ -10,7 +10,7 @@ export default class MySlider extends Component {
         <Slider dots className="Slider" autoplay={true} autoplaySpeed={3000}>
           {SliderImage.map((el, i) => (
             <div key={i} className="slider_items">
-              <img src={el} alt="" />
+              <img src={el} alt="el" />
             </div>
           ))}
         </Slider>

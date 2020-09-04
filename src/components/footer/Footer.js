@@ -1,8 +1,32 @@
 import React from "react";
 import './Footer.scss'
 import  {Icon} from "rsuite";
-
 export default function (){
+
+    const info = [
+
+        {
+            icon:<Icon icon="map-marker" size="lg" />,
+            name:'Ք․ԵՐԵՎԱՆ Ռաֆու 19'
+        },
+        {
+            icon:<Icon icon="mobile" size="lg" />,
+            name:'(374)-41-888844'
+        },
+        {
+            icon:<Icon icon="mobile" size="lg" />,
+            name:'(374)-41-888844'
+        },
+        {
+            icon:<Icon icon="mobile" size="lg" />,
+            name:'(374)-93-888044'
+        },
+        {
+            icon:<Icon icon="envelope" size="lg" />,
+            name:'info@v8.am'
+        },
+    ]
+
     return (
         <footer >
             <div className="container row footer_container ">
@@ -10,31 +34,14 @@ export default function (){
                     <nav className="Footer_nav">
                         <ul>
                             <h4>Հասցե</h4>
-                            <li>
-                                <Icon icon="map-marker" size="1x" />
-                                <li>Ք․ԵՐԵՎԱՆ Ռաֆու 19</li>
-                            </li>
-                            <ul>
-                                <ul>
-                                    <li>
-                                        <Icon icon="mobile" size="1x" />
-                                        <li>(374)-41-888844</li>
+                            {
+                                info.map(({icon,name},i)=>(
+                                    <li key={i}>
+                                        {icon}
+                                        <span>{name}</span>
                                     </li>
-                                    <li>
-                                        <Icon icon="mobile" size="1x" />
-                                        <li>(374)-43-888844</li>
-                                    </li>
-                                    <li>
-                                        <Icon icon="mobile" size="1x" />
-                                        <li>(374)-93-888044</li>
-                                    </li>
-                                </ul>
-                            </ul>
-                            <li>
-                                <Icon icon="envelope" size="1x" />
-                                <li>info@v8.am</li>
-                            </li>
-
+                                ))
+                            }
                         </ul>
                     </nav>
                 </div>
