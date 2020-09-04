@@ -1,5 +1,7 @@
 @import "var";
-
+.rs-loader-wrapper{
+  z-index: 1000;
+}
 .wrapper{
   width: 100%;
   height: 100vh;
@@ -32,20 +34,6 @@ input[type=number]::-webkit-outer-spin-button
   -webkit-appearance: none;
   margin: 0;
 }
-.dark,.white,.body_dark,.body_white{
-  transition: 0.5s;
-}
-.dark{
-  background: #212121;
-}
-.body_white{
-  background: #eeeeee;
-}
-.body_dark{
-  background: #757575;
-}
-.white{
-  background: #0277bd;
-}
+
 
 

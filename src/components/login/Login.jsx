@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, FormControl, ControlLabel, HelpBlock, Button, ButtonToolbar, Modal} from "rsuite";
 import './Login.scss';
-
+import {Url}from '../config/Url'
 
 export default class Login extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ export default class Login extends Component {
                             <a href="" className='google'></a>
                             <a href="" className='facebook'></a>
                         </div>
-                        <form action="https://elbakyan.am/Server/login" method="POST">
+                        <form action={Url.login} method="POST">
                             <label className="phone">
                                 <input
                                     required

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, FormControl, ControlLabel, HelpBlock, Button, ButtonToolbar, Modal} from "rsuite";
+import {Button, ButtonToolbar, Modal} from "rsuite";
 import './Reg.scss';
 
 
@@ -31,24 +31,90 @@ export default class Reg extends Component {
 
                 <Modal overflow={overflow} show={show} onHide={this.close}>
                     <Modal.Header>
-                        <Modal.Title>Գրեք ձեր մուտքին տվյալները․․․</Modal.Title>
+                        <Modal.Title>Գրեք ձեր գրանցման տվյալները․․․</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <form action="https://elbakyan.am/Server/login" method="POST">
-                            <label className="phone">
-                                <input
-                                    required
-                                    type="number"
-                                    name="phone"
-                                    placeholder="Հեռախոսահամար․․․"
-                                />
-                            </label>
-                            <label className="password">
-                                <input type="password" name="password" placeholder="Գախտնաբառ․․․" />
-
-                            </label>
-                            <Button color="violet" type="submit">Մուտք</Button>
-                        </form>
+                        <div className="Signup">
+                            <h2>Hello World</h2>
+                            <form onSubmit={this.SendUserData}>
+                                <div>
+                                    <label className="fullname">
+                                        <input
+                                            required
+                                            id="name"
+                                            type="text"
+                                            name="name"
+                                            placeholder="Անուն․․․"
+                                        />
+                                    </label>
+                                    <div className="margin"></div>
+                                    <label className="fullname">
+                                        <input
+                                            required
+                                            type="text"
+                                            name="surname"
+                                            placeholder="Ազգանուն․․․"
+                                        />
+                                    </label>
+                                </div>
+                                <label className="phone">
+                                    <input
+                                        required
+                                        type="number"
+                                        name="phone"
+                                        placeholder="Հեռախոսահամար․․․"
+                                    />
+                                </label>
+                                <label className="email">
+                                    <input required type="email" name="email" placeholder="E-mail..." />
+                                </label>
+                                <div>
+                                    <label className="password">
+                                        <input
+                                            required
+                                            type="password"
+                                            name="password"
+                                            placeholder="Գախտնաբառ․․․"
+                                        />
+                                    </label>
+                                    <div className="margin"></div>
+                                    <label className="password">
+                                        <input
+                                            required
+                                            type="password"
+                                            name="password2"
+                                            placeholder="Կրկնել Գախտնաբառը․․․"
+                                        />
+                                    </label>
+                                </div>
+                                {/*<div>*/}
+                                {/*    <label className="location">*/}
+                                {/*        <select name="sircle" id="" onChange={this.getCity}>*/}
+                                {/*            {this.state.keys.map((data, id) => {*/}
+                                {/*                return (*/}
+                                {/*                    <option value={data} key={id}>*/}
+                                {/*                        {data}*/}
+                                {/*                    </option>*/}
+                                {/*                );*/}
+                                {/*            })}*/}
+                                {/*        </select>*/}
+                                {/*    </label>*/}
+                                {/*    <div className="margin"></div>*/}
+                                {/*    <label className="location">*/}
+                                {/*        <select name="city">*/}
+                                {/*            {this.state.city.map((data, id) => {*/}
+                                {/*                return (*/}
+                                {/*                    <option value={data} key={id}>*/}
+                                {/*                        {data}*/}
+                                {/*                    </option>*/}
+                                {/*                );*/}
+                                {/*            })}*/}
+                                {/*        </select>*/}
+                                {/*    </label>*/}
+                                {/*</div>*/}
+                                <Button color="violet" type="submit">Գրանցվել</Button>
+                            </form>
+                        </div>
                     </Modal.Body>
                 </Modal>
 
