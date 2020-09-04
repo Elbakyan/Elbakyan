@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import logo from "../../img/logo_1.svg";
-import { Loader,Button,Modal,ButtonToolbar,Toggle} from 'rsuite';
+import  {Icon, Loader,Button,Modal,ButtonToolbar,Toggle} from 'rsuite';
 // import { fas, faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 

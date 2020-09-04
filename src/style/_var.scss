@@ -1,6 +1,6 @@
 $black: #000000;
 $wheit: #ffffff;
-$color_1: #232f3e;
+$color_1: #101423;
 $color_2: #131921;
 $header_bg:#101423;
 $Desktop: 16px;
@@ -12,3 +12,9 @@ $phone: 10px;
   background-position: center;
 }
 
+@mixin  default {
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
