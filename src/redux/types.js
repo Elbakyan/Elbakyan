@@ -1,0 +1,1 @@
+export const USER_STATUS_EXIST = 'USER_STATUS_EXIST';
