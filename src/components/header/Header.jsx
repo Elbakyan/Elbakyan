@@ -5,8 +5,9 @@ import {userExist} from "../../redux/action/actions";
 import {connect} from "react-redux";
 import { Loader,Button,Modal,ButtonToolbar } from 'rsuite';
 import AppHeader from "./AppHeader";
+import UserHeader from "./UserHeader";
 
-
+const test = true
 
 class Header extends Component {
     constructor(props) {
@@ -21,18 +22,17 @@ class Header extends Component {
 
 
     render() {
-        console.log(this.props)
-        if (this.props.user.status == undefined) {
-            return ( <Loader size="lg" backdrop content="loading..." vertical /> )
-        } else if (this.props.user.status == false) {
-            return (
-               <AppHeader/>
-            )
-        }else if (this.props.user.status == true){
-            return (
-                // <header></header>
-                <h1>sds</h1>
 
+        if (test == undefined) {
+            return ( <Loader size="lg" backdrop content="loading..." vertical /> )
+        } else if (test == false) {
+            return (
+
+               <AppHeader/>
+        )
+        }else if (test == true){
+            return (
+                <UserHeader/>
             )
         }
     }

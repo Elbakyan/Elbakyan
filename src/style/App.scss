@@ -1,53 +1,44 @@
 @import "var";
-*{
-  @include default
-}
-.wrapper{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow-x: hidden;
-}
-.progress{
-  width: 100%;
 
-  position: absolute;
-  top: 10px;
-  top: 0;
-}
-.container{
-  width: 1140px;
-  height: 100%;
+* {
+  @include default.rs-loader-wrapper {
+    z-index: 1000;
+  }
 
-  margin: 0 auto;
-}
-.row{
-  display: flex;
-  align-items: center;
-}
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
-}
-.dark,.white,.body_dark,.body_white{
-  transition: 0.5s;
-}
-.dark{
-  background: #212121;
-}
-.body_white{
-  background: #eeeeee;
-}
-.body_dark{
-  background: #757575;
-}
-.white{
-  background: #0277bd;
-}
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+  }
 
+  .progress {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    top: 0;
+  }
+
+  .container {
+    width: 1140px;
+    height: 100%;
+
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
 

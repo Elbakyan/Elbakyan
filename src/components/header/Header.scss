@@ -3,12 +3,14 @@
 header {
   width: 100%;
   height: 60px;
-  background-color: $header_bg;
+  background-color: $color_1;
   position: relative;
   z-index: 10;
 
   .header_container {
+
     justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
@@ -23,8 +25,11 @@ header {
   }
 
   .header__nav {
+    height: 100%;
     > ul {
+      height: 100%;
       display: flex;
+      align-items: center;
 
       li {
         cursor: pointer;
@@ -67,7 +72,7 @@ header {
   }
 
   h2 {
-    color: $header_bg;
+    color: $color_1;
     font-size: 16px;
     background-color: $wheit;
     padding: 5px 20px;
@@ -110,17 +115,17 @@ header {
   }
 
   &::-webkit-scrollbar-track {
-    background: $header_bg;
+    background: $color_1;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: darken($color: $header_bg, $amount: 20);
+    background: darken($color: $color_1, $amount: 20);
   }
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: darken($color: $header_bg, $amount: 50);
+    background: darken($color: $color_1, $amount: 50);
   }
 
   li {
@@ -160,4 +165,25 @@ header {
     margin: 0;
   }
 }
+.user{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: $color_2;
+  &_name{
+    font-size: $desktop;
+    color: $wheit;
+  }
+  .avatar-group{
+    margin-right: 5px;
+    img{
+      width: 40px;
+    }
+  }
+
+
+}
+
+
 

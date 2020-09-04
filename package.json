@@ -13,6 +13,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "customize-cra": "^1.0.0-alpha.0",
+    "infinite-react-carousel": "^1.2.11",
     "less": "^3.11.1",
     "less-loader": "^6.0.0",
     "normalize": "^0.3.1",
