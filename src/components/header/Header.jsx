@@ -21,7 +21,7 @@ class Header extends Component {
 
 
     render() {
-        console.log(this.props)
+
         if (this.props.user.status == undefined) {
             return ( <Loader size="lg" backdrop content="loading..." vertical /> )
         } else if (this.props.user.status == false) {
