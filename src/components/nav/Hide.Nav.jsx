@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./Hide.Nav.scss"
-import {connect} from "react-redux";
+
 
  class HideNav extends Component{
     constructor(props) {
@@ -10,15 +10,16 @@ import {connect} from "react-redux";
         console.log()
         return(
             <ul className="Hide_Nav">
-                {this.props.mark.map(auto => {
-                    return (<li key={auto.id}><a href="">{auto.name}</a></li>)
+                {this.props.value.map(object => {
+                    return (
+                        <li key={object.id}>
+                            <img src={object.img} alt=""/>
+                            <a href="">{object.name}</a>
+                        </li>)
                 })}
             </ul>
         )
     }
 }
-const MakeStateToProps = (state) => {
-    return state.auto
-}
-const MainHideNav = connect(MakeStateToProps)(HideNav)
-export default MainHideNav;
+
+export default HideNav;

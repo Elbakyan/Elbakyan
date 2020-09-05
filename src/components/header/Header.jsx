@@ -3,7 +3,7 @@ import 'rsuite/lib/styles/themes/default/index.less';
 import './Header.scss';
 import {userExist} from "../../redux/action/actions";
 import {connect} from "react-redux";
-import { Loader,Button,Modal,ButtonToolbar } from 'rsuite';
+import { Loader } from 'rsuite';
 import AppHeader from "./AppHeader";
 import UserHeader from "./UserHeader";
 
@@ -25,11 +25,11 @@ class Header extends Component {
 
         if (this.props.user.status == undefined) {
             return ( <Loader size="lg" backdrop content="loading..." vertical /> )
-        } else if (this.props.user.status == true) {
+        } else if (this.props.user.status == false) {
             return (
                <AppHeader/>
         )
-        }else if (this.props.user.status == false){
+        }else if (this.props.user.status == true){
             return (
                 <UserHeader/>
             )

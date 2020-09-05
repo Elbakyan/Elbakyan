@@ -1,13 +1,15 @@
 import React,{Component} from 'react';
 import logo from "../../img/logo_1.svg";
 import {Button,Avatar,Badge,Icon} from "rsuite";
-import defaultImg from '../../img/default.svg'
 import {Url}from '../config/Url';
+import HideNav from "../nav/Hide.Nav";
+import {connect} from "react-redux";
 
 
 class UserHeader extends  Component{
 
     render() {
+        console.log(this.props.auto.mark)
 
         return(
             <header>
@@ -20,16 +22,17 @@ class UserHeader extends  Component{
                     <nav className="header__nav">
                         <ul>
                             <li>
-                                <a href="">Պահեստամասեր</a>
+                                <a href="#">Պահեստամասեր</a>
+                                <HideNav value={this.props.auto.mark}/>
                             </li>
                             <li>
-                                <a href="">Ծառայություններ</a>
+                                <a href="#">Ծառայություններ</a>
                             </li>
                             <li>
-                                <a href="">Իմ Մեքենան</a>
+                                <a href="#">Իմ Մեքենան</a>
                             </li>
                             <li>
-                                <a href="">Իմ Խանութը</a>
+                                <a href="#">Իմ Խանութը</a>
                             </li>
                         </ul>
                     </nav>
@@ -37,7 +40,7 @@ class UserHeader extends  Component{
                         <div className="avatar-group">
                             <Badge content="15">
                                 <Avatar>
-                                    <img src={defaultImg} alt=""/>
+                                    <img src="https://elbakyan.am/Server/img/default.svg" alt="default.svg"/>
                                 </Avatar>
                             </Badge>
                         </div>
@@ -52,4 +55,9 @@ class UserHeader extends  Component{
         )
     }
 }
-export default UserHeader;
+const MakeStateToProps = (state) => {
+    return state
+}
+const MainUserHeader = connect(MakeStateToProps)(UserHeader)
+
+export default MainUserHeader;

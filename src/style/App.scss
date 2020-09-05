@@ -16,6 +16,11 @@
     align-items: center;
     position: relative;
     overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+
+
   }
 
   .progress {
