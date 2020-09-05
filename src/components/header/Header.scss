@@ -53,7 +53,7 @@ header {
           border-bottom: 7px solid $wheit;
         }
 
-        &:hover > .hidden_menue {
+        &:hover > .Hide_Nav {
           transform: scaleY(1);
         }
 
@@ -66,6 +66,10 @@ header {
           font-size: 14px;
           line-height: 21px;
           color: $wheit;
+          &:hover{
+            text-decoration: none;
+          }
+
         }
       }
     }
@@ -96,68 +100,7 @@ header {
   }
 }
 
-.hidden_menue {
-  height: 300px;
-  overflow-y: scroll;
-  padding: 10px 10px 30px 30px;
-  position: absolute;
-  left: -30px;
-  top: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: 0.5s;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $color_1;
-  }
-
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background: darken($color: $color_1, $amount: 20);
-  }
-
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: darken($color: $color_1, $amount: 50);
-  }
-
-  li {
-
-    border-radius: 5px;
-    margin: 2px 0;
-
-    &::after {
-      display: none;
-    }
-
-    .mark_icon {
-      width: 30px;
-      height: 30px;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-
-    }
-
-    &:hover {
-      box-shadow: 0px 0px 10px #000;
-    }
-
-    a {
-      transition: 0.3s;
-      width: 150px;
-    }
-  }
-
-
-}
 .modal-container{
 
   margin: 0px 10px;

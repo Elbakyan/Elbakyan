@@ -1,6 +1,7 @@
 import {Url} from '../../components/config/Url'
-import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY} from "../types";
+import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY, GET_AUTO_MARK} from "../types";
 import {POST} from "../../components/config/Requsest";
+import Login from "../../components/login/Login";
 
 
 export function userExist() {
@@ -37,4 +38,13 @@ export function City(e) {
 
     }
 }
-
+export function Auto() {
+    return async (dispach) => {
+        const response = await fetch(Url.auto)
+        const json = await response.json();
+        dispach({
+            type: GET_AUTO_MARK,
+            payload: json
+        })
+    }
+}

@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import 'normalize.css';
 import './style/App.scss';
 import 'rsuite/lib/styles/themes/default/index.less';
-import {userExist,Location} from "./redux/action/actions";
+import {userExist, Location, Auto} from "./redux/action/actions";
 import Header from './components/header/Header'
 import Footer from "./components/footer/Footer";
 import { Carousel } from 'rsuite';
@@ -17,11 +17,11 @@ class App extends Component{
         const dispach = this.props.dispatch;
         dispach(userExist())
         dispach(Location())
+        dispach(Auto())
 
     }
 
     render() {
-
         return(
             <div className="wrapper">
                 <Header />
