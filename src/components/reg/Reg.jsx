@@ -3,7 +3,7 @@ import {Url} from '../config/Url'
 import {Button, ButtonToolbar, Modal} from "rsuite";
 import './Reg.scss';
 import {connect} from "react-redux";
-import {POST} from "../config/Requsest";
+import {POST,TEST_POST} from "../config/Requsest";
 import {City} from "../../redux/action/actions";
 
 
@@ -12,7 +12,8 @@ import {City} from "../../redux/action/actions";
         super(props);
         this.state = {
             show: false,
-            overflow: true
+            overflow: true,
+            message: ''
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
@@ -23,11 +24,17 @@ import {City} from "../../redux/action/actions";
     open(event) {
         this.setState({ show: true });
     }
-     SendUserData(e) {
+     SendUserData = (e) => {
         e.preventDefault()
         let data = new FormData(e.target);
-        POST(Url.registration).then(res => {
-            console.log(res)
+         POST(Url.registration,data).then(res => {
+            this.setState({message: res.message})
+             if (res.status) {
+                 setTimeout(() => {
+                     document.location.reload(true)
+                 },1000)
+             }
+
         })
 
 
@@ -47,7 +54,7 @@ import {City} from "../../redux/action/actions";
                     </Modal.Header>
                     <Modal.Body>
                         <div className="Signup">
-                            <h2>Hello World</h2>
+                            <h2>{this.state.message}</h2>
                             <form onSubmit={this.SendUserData}>
                                 <div>
                                     <label className="fullname">

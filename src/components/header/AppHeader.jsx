@@ -3,6 +3,7 @@ import logo from "../../img/logo_1.svg";
 import  {Icon, Loader,Button,Modal,ButtonToolbar,Toggle} from 'rsuite';
 import Login from "../login/Login";
 import Reg from "../reg/Reg"
+import HideNav from "../nav/Hide.Nav";
 
 // import { fas, faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -28,6 +29,7 @@ class AppHeader extends  Component{
                         <ul>
                             <li>
                                 <a href="">Պահեստամասեր</a>
+                               <HideNav />
                             </li>
                             <li>
                                 <a href="">Ծառայություններ</a>
