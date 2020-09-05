@@ -7,6 +7,7 @@ import Header from './components/header/Header'
 import Footer from "./components/footer/Footer";
 import { Carousel } from 'rsuite';
 import Slider from "./components/slider/Slider";
+import Score from "./components/score/Score";
 
 
 
