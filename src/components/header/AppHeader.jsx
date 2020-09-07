@@ -3,7 +3,8 @@ import React,{Component} from 'react';
 import  {Icon, Loader,Button,Modal,ButtonToolbar,Toggle} from 'rsuite';
 import Login from "../login/Login";
 import Reg from "../reg/Reg"
-// import HideNav from "../nav/Hide.Nav";
+import {connect} from "react-redux";
+import HideNav from "../nav/Hide.Nav";
 
 // import { fas, faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -29,7 +30,7 @@ class AppHeader extends  Component{
                         <ul>
                             <li>
                                 <a href="#">Պահեստամասեր</a>
-                               {/*<HideNav />*/}
+                               <HideNav value={this.props.auto.mark} />
                             </li>
                             <li>
                                 <a href="#">Ծառայություններ</a>
@@ -45,4 +46,11 @@ class AppHeader extends  Component{
         )
     }
 }
-export default AppHeader;
+
+
+const MakeStateToProps = (state) => {
+    return state
+}
+const MainAppHeader = connect(MakeStateToProps)(AppHeader)
+
+export default MainAppHeader;
