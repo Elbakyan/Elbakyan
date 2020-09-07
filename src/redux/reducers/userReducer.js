@@ -9,7 +9,7 @@ export default function userReducer(state = initialState, action) {
 
         switch (action.type) {
             case USER_STATUS_EXIST:
-               return  action.payload
+               // return  action.payload
             default:
                 return state
 
