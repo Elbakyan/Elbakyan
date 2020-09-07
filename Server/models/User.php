@@ -6,7 +6,7 @@ class User
     {
         global $mysql;
 
-        $result = $mysql->query("SELECT `id` FROM `user` WHERE `phone` = '$phone' AND `password` = '$password'");
+        $result = $mysql->query("SELECT `id`,`name`,`surnam`,`phone`, `mail`, `sircle`,`city` FROM `user` WHERE `phone` = '$phone' AND `password` = '$password'");
         if ($result->num_rows) {
             $_SESSION['user'] = $result->fetch_assoc();
             header('Location: https://elbakyan.am/');
