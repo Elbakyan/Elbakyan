@@ -26,26 +26,29 @@ class App extends Component{
     }
 
     render() {
-        if (this.props.user.status == undefined) {
-            return ( <Loader size="lg" backdrop content="loading..." vertical /> )
-        } else if (this.props.user.status == false) {
-            return(
-                <div className="wrapper">
-                    <Header />
-                    <div className="container">
-                        <Slider/>
+        switch (this.props.user.status){
+            case undefined:
+                return ( <Loader size="lg" backdrop content="loading..." vertical /> )
+                break;
+            case false:
+                return(
+                    <div className="wrapper">
+                        <Header />
+                        <div className="container">
+                            <Slider/>
+                        </div>
+                        <Footer />
                     </div>
-                    <Footer />
-                </div>
-            )
-        }else if (this.props.user.status == true){
-            return(
-                <div className="wrapper">
-                    <Header />
-                    <User/>
-                    <Footer />
-                </div>
-            )
+                )
+                break;
+            case true:
+                return(
+                    <div className="wrapper">
+                        <Header />
+                        <User/>
+                        <Footer />
+                    </div>
+                )
         }
 
     }

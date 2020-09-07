@@ -22,17 +22,15 @@ class Header extends Component {
 
 
     render() {
-
-        if (this.props.user.status == undefined) {
-            return ( <Loader size="lg" backdrop content="loading..." vertical /> )
-        } else if (this.props.user.status == false) {
-            return (
-               <AppHeader/>
-        )
-        }else if (this.props.user.status == true){
-            return (
-                <UserHeader/>
-            )
+        switch (this.props.user.status){
+            case undefined:
+                return ( <Loader size="lg" backdrop content="loading..." vertical /> )
+            break;
+            case false:
+                return ( <AppHeader/> )
+            break;
+            case true:
+                return ( <UserHeader/> )
         }
     }
 
