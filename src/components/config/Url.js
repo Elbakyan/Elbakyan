@@ -6,7 +6,9 @@ export const Url = {
     city: 'https://elbakyan.am/Server/location/city',
     registration: 'https://elbakyan.am/Server/Reg',
     auto: 'https://elbakyan.am/Server/auto',
-    model: 'https://elbakyan.am/Server/auto/model'
+    model: 'https://elbakyan.am/Server/auto/model',
+    addauto: 'https://elbakyan.am/Server/AddUserAuto',
+    getUserAuto: 'https://elbakyan.am/Server/GetUserAuto'
 
 }
 // export const Url = {
@@ -15,6 +17,9 @@ export const Url = {
 //     logout: 'http://test.local/Server/logout',
 //     location: 'http://test.local/Server/location',
 //     city: 'http://test.local/Server/location/city',
-//     registration: 'http://test.local/Server/Reg'
+//     registration: 'http://test.local/Server/Server/Reg',
+//     auto: 'http://test.local/Server/auto',
+//     model: 'http://test.local/Server/auto/model',
+//     addauto: 'http://test.local/Server/AddUserAuto'
 //
 // }

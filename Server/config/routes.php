@@ -15,6 +15,10 @@ return array(
 	//Get auto mark
 	'auto' => 'json/auto',
 	//Logout user
-	'logout' => 'user/Logout'
+	'logout' => 'user/Logout',
+    //add user auto
+    'AddUserAuto' => 'myauto/index',
+    //add user auto
+    'GetUserAuto' => 'myauto/GetUserAuto'
 	
 );
