@@ -2,8 +2,12 @@ import React,{Component} from 'react';
 import  {Button,Modal} from "rsuite";
 import {City, Model} from "../../redux/action/actions";
 import {connect} from "react-redux";
+<<<<<<< HEAD
 import {POST, TEST_POST} from "../config/Requsest";
 import {Url} from "../config/Url";
+=======
+import MyAuto from "./MyAuto";
+>>>>>>> ba8d60c6f348c6f975f7b574d2fc2c517120c1f4
 
 class UserAuto extends Component{
     constructor(props) {
@@ -167,7 +171,9 @@ class UserAuto extends Component{
                                 </form>
                             </Modal.Body>
                         </Modal>
+
                     </div>
+                <MyAuto />
             </div>
         )
     }

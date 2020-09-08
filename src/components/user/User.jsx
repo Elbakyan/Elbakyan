@@ -5,6 +5,7 @@ import {faMapMarkedAlt,faCity,faAt,faPhoneAlt,faCog,faEnvelope,faTags,faClipboar
 import UserAuto from "./UserAuto";
 import {connect} from "react-redux";
 
+
 class User extends Component{
     constructor(props) {
         super(props);
@@ -67,6 +68,9 @@ class User extends Component{
                             </div>
 
                         </div>
+                    </div>
+                    <div className="user_my_auto">
+
                     </div>
                     <UserAuto/>
                 </div>
