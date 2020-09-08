@@ -149,7 +149,7 @@ class UserAuto extends Component{
                         </Modal>
 
                     </div>
-                <MyAuto />
+                <MyAuto/>
             </div>
         )
     }
