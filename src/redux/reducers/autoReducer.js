@@ -155,7 +155,7 @@ const initialState = {
     year: (() => {
         let temp = [];
         let year = new Date().getFullYear();
-        for (let i = 1915; i <= year; i++){
+        for (let i = year; i >= 1915; i--){
             temp.push(i);
         }
         return temp;

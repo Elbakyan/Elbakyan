@@ -2,7 +2,12 @@ import React,{Component} from 'react';
 import  {Button,Modal} from "rsuite";
 import {City, Model} from "../../redux/action/actions";
 import {connect} from "react-redux";
+<<<<<<< HEAD
+import {POST, TEST_POST} from "../config/Requsest";
+import {Url} from "../config/Url";
+=======
 import MyAuto from "./MyAuto";
+>>>>>>> ba8d60c6f348c6f975f7b574d2fc2c517120c1f4
 
 class UserAuto extends Component{
     constructor(props) {
@@ -13,6 +18,15 @@ class UserAuto extends Component{
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
     }
+    componentDidMount() {
+
+        let data = new FormData()
+        data.append('user_id', this.props.user.data.id);
+        POST(Url.getUserAuto,data).then(res => {
+            console.log(res)
+        })
+    }
+
     close() {
         this.setState({
             show: false
@@ -23,6 +37,14 @@ class UserAuto extends Component{
             size,
             show: true
         });
+    }
+    AddAuto(e) {
+        e.preventDefault();
+        let data = new FormData(e.target)
+        POST(Url.addauto,data).then(res => {
+            console.log(res)
+        })
+
     }
     render() {
         return(
@@ -41,10 +63,10 @@ class UserAuto extends Component{
                                 <Modal.Title>Ավելացնել Ավտnմքենա․․․</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <form className="add__auto-form">
+                                <form className="add__auto-form" encType="multipart/form-data" onSubmit={this.AddAuto}>
                                         <div className="items">
                                             <label>Մոդել </label>
-                                            <select name="" id="" onChange={(e)=> {
+                                            <select name="mark" id="" onChange={(e)=> {
                                                 this.props.dispatch(Model(e))
                                             }}>
 
@@ -64,7 +86,7 @@ class UserAuto extends Component{
                                         </div>
                                         <div className="items">
                                             <label >Մակնիշ</label>
-                                            <select name="" id="">
+                                            <select name="model" id="">
                                                 {this.props.auto.model.map(auto => {
                                                     return (
                                                         <option
@@ -81,7 +103,7 @@ class UserAuto extends Component{
                                         <div className="items">
 
                                             <label>Գույն </label>
-                                            <select name="" id="">
+                                            <select name="color" id="">
                                                 {this.props.auto.color.map(color => {
                                                     return (
                                                         <option
@@ -97,7 +119,7 @@ class UserAuto extends Component{
                                         </div>
                                         <div className="items">
                                             <label>Տարեթիվ</label>
-                                            <select name="" id="">
+                                            <select name="year" id="">
                                                 {this.props.auto.year.map(year => {
                                                     return (
                                                         <option
@@ -112,7 +134,7 @@ class UserAuto extends Component{
                                         </div>
                                         <div className="items">
                                             <label>Շարժիչի Ծավալ</label>
-                                            <select name="" id="">
+                                            <select name="engine" id="">
                                                 {this.props.auto.engine.map(engine => {
                                                     return (
                                                         <option
@@ -128,19 +150,21 @@ class UserAuto extends Component{
 
                                         <div className="items">
                                             <label>Պետհամարանիշ</label>
-                                            <input type="text" placeholder="77AA777"/>
+                                            <input type="text" placeholder="77AA777" name="auto_number"/>
                                         </div>
                                         <div className="items">
                                             <label>նույնականացման Համար</label>
-                                            <input type="text" placeholder="V28-45589875"/>
+                                            <input type="text" placeholder="V28-45589875" name="vin"/>
                                         </div>
                                         <div className="items">
                                             <label>Լուսանկար</label>
-                                            <input type="file"/>
+                                            <input type="file" name="user_img"/>
                                         </div>
                                             <input type="hidden" name="user_id" value="1"/>
                                        <div className="items">
-                                           <Button color="violet" className="user__form-btn">Ավելացնել</Button>
+                                           <button type='submit'>
+                                               Ավելացնել
+                                           </button>
                                        </div>
 
 

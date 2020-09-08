@@ -20,7 +20,7 @@ class User extends Component{
                             <img src="https://elbakyan.am/Server/img/default.svg" alt=""/>
                         </div>
                         <div className="user__name">
-                            {/*<p>{this.props.user.data.name + ' ' + this.props.user.data.surname}</p>*/}
+                            <p>{this.props.user.data.name + ' ' + this.props.user.data.surname}</p>
                         </div>
 
                         <div className="user__nav">
@@ -49,22 +49,22 @@ class User extends Component{
                         <div className="user__info">
                             <div className="mail">
                                 <FontAwesomeIcon icon={faAt} className="user__icon"/>
-                                {/*<span className="mail">{this.props.user.data.email}</span>*/}
+                                <span className="mail">{this.props.user.data.email}</span>
                             </div>
                             <div className="phone">
                                 <FontAwesomeIcon icon={faPhoneAlt} className="user__icon"/>
-                                {/*<span className="phone">{this.props.user.data.phone}</span>*/}
+                                <span className="phone">{this.props.user.data.phone}</span>
                             </div>
 
                         </div>
                         <div className="user__location">
                             <div className="sircle">
                                 <FontAwesomeIcon icon={faMapMarkedAlt} className="user__icon"/>
-                                {/*<span className="sircle">{this.props.user.data.sircle}</span>*/}
+                                <span className="sircle">{this.props.user.data.sircle}</span>
                             </div>
                             <div className="city">
                                 <FontAwesomeIcon icon={faCity} className="user__icon"/>
-                                {/*<span className="city">{this.props.user.data.city}</span>*/}
+                                <span className="city">{this.props.user.data.city}</span>
                             </div>
 
                         </div>
