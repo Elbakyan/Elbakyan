@@ -79,9 +79,10 @@ import {City} from "../../redux/action/actions";
                                 <label className="phone">
                                     <input
                                         required
-                                        type="number"
+                                        type="tel"
                                         name="phone"
-                                        placeholder="Հեռախոսահամար․․․"
+                                        pattern="[0-9]{11}"
+                                        placeholder="37494444444"
                                     />
                                 </label>
                                 <label className="email">
@@ -119,6 +120,7 @@ import {City} from "../../redux/action/actions";
                                             {this.props.location.sircle.map((data, id) => {
                                                 return (
                                                     <option
+                                                        key={data.id}
                                                         id={data.id}
                                                         value={data.name}
                                                         data-id={data.id}

@@ -9,8 +9,6 @@ import {connect} from "react-redux";
 class UserHeader extends  Component{
 
     render() {
-        console.log(this.props.auto.mark)
-
         return(
             <header>
                 <div className="container row header_container">

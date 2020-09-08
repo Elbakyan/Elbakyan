@@ -1,5 +1,5 @@
 import {Url} from '../../components/config/Url'
-import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY, GET_AUTO_MARK} from "../types";
+import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY, GET_AUTO_MARK, GET_AUTO_MODEL} from "../types";
 import {POST} from "../../components/config/Requsest";
 import Login from "../../components/login/Login";
 
@@ -46,5 +46,19 @@ export function Auto() {
             type: GET_AUTO_MARK,
             payload: json
         })
+    }
+}
+export function Model(e) {
+    return async (dispach) => {
+        let data = new FormData();
+        data.append('id', e.target.selectedIndex+1);
+        POST(Url.model, data).then(data=> {
+            console.log(data)
+            dispach({
+                type: GET_AUTO_MODEL,
+                payload: data
+            })
+        })
+
     }
 }
