@@ -7,6 +7,7 @@ import Header from './components/header/Header'
 import Footer from "./components/footer/Footer";
 import {Loader} from 'rsuite';
 import Slider from "./components/slider/Slider";
+import Content from "./components/content/Content";
 import User from "./components/user/User"
 import Score from "./components/score/Score";
 import AppHeader from "./components/header/AppHeader";
@@ -45,7 +46,7 @@ class App extends Component{
                 return(
                     <div className="wrapper">
                         <Header />
-                        <User/>
+                        <Content />
                         <Footer />
                     </div>
                 )
