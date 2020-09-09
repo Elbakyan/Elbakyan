@@ -19,6 +19,7 @@ return array(
     //add user auto
     'AddUserAuto' => 'myauto/index',
     //add user auto
-    'GetUserAuto' => 'myauto/GetUserAuto'
+    'GetUserAuto' => 'myauto/GetUserAuto',
+    'DeleteUserAuto' => 'myauto/DeleteUserAuto'
 	
 );

@@ -8,7 +8,8 @@ export const Url = {
     auto: 'https://elbakyan.am/Server/auto',
     model: 'https://elbakyan.am/Server/auto/model',
     addauto: 'https://elbakyan.am/Server/AddUserAuto',
-    getUserAuto: 'https://elbakyan.am/Server/GetUserAuto'
+    getUserAuto: 'https://elbakyan.am/Server/GetUserAuto',
+    DeleteUserAuto: 'https://elbakyan.am/Server/DeleteUserAuto'
 
 }
 // export const Url = {

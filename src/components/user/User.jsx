@@ -17,7 +17,7 @@ class User extends Component{
                 <div className="container row">
                     <div className="user">
                         <div className="user__img">
-                            <img src="https://elbakyan.am/Server/img/default.svg" alt=""/>
+                            <img src="https://elbakyan.am/Server/img/default.png" alt=""/>
                         </div>
                         <div className="user__name">
                             <p>{this.props.user.data.name + ' ' + this.props.user.data.surname}</p>

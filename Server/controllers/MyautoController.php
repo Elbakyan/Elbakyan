@@ -9,10 +9,10 @@ class MyautoController
     {
         require ROOT . '/models/AddAuto.php';
         if (!empty($_POST)){
-            if (strlen($_POST['mark'] ) <= 3) {
+            if ($_POST['mark']  == '') {
                 MyautoController::$Error = 'Մակնիշը պետք է դատարկ չլինի․․․';
             }
-            if (strlen($_POST['model'] ) <= 3) {
+            if ($_POST['model'] == '') {
                 MyautoController::$Error = 'Մոդելը պետք է դատարկ չլինի․․․';
             }
             if ($_POST['year']  == '') {
@@ -43,13 +43,32 @@ class MyautoController
         global $mysql;
         if (!empty($_POST)){
             $data = $mysql->query("SELECT * FROM `user_auto` WHERE `user_id` = $_POST[user_id]");
-            http_response_code(201);
-            echo json_encode([
-                'status' => true,
-                'data' => $data->fetch_assoc()
-            ]);
+            $tmp = [];
+            while ($row = $data->fetch_assoc()){
+                $tmp[] =  $row;
+            }
+            if ($data->num_rows> 0){
+                echo json_encode([
+                    'status' => true,
+                    'data' => $tmp
+                ]);
+            }else{
+                echo json_encode([
+                    'status' => false
+                ]);
+            }
         }
+    }
+    public function actionDeleteUserAuto(){
+        global  $mysql;
+        if (!empty($_POST)){
+            $res = $mysql->query( "DELETE FROM `user_auto` WHERE `user_auto`.`id` = $_POST[id]");
+            echo  json_encode(['status' => $res]);
+            if ($_POST['img_name'] != 'https://elbakyan.am/Server/img/default.png'){
+                unlink($_POST['img_name']);
+            }
 
+        }
 
     }
 

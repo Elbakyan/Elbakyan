@@ -1,49 +1,49 @@
 import React,{Component} from 'react';
 import  {Button,Modal} from "rsuite";
-import {City, Model} from "../../redux/action/actions";
+import {City, GetMyAuto, Model} from "../../redux/action/actions";
 import {connect} from "react-redux";
-<<<<<<< HEAD
+
 import {POST, TEST_POST} from "../config/Requsest";
 import {Url} from "../config/Url";
-=======
+
 import MyAuto from "./MyAuto";
->>>>>>> ba8d60c6f348c6f975f7b574d2fc2c517120c1f4
+
 
 class UserAuto extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            show: false
+            show: false,
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
     }
-    componentDidMount() {
-
-        let data = new FormData()
-        data.append('user_id', this.props.user.data.id);
-        POST(Url.getUserAuto,data).then(res => {
-            console.log(res)
-        })
-    }
-
     close() {
         this.setState({
-            show: false
+            show: false,
+
         });
     }
     open(size) {
         this.setState({
             size,
-            show: true
+            show: true,
+
         });
     }
+    componentDidMount() {
+        this.props.dispatch(GetMyAuto(this.props.user.data.id))
+    }
+
     AddAuto(e) {
         e.preventDefault();
         let data = new FormData(e.target)
         POST(Url.addauto,data).then(res => {
-            console.log(res)
+           if (res.status){
+               document.location.reload(true)
+           }
         })
+
 
     }
     render() {
@@ -160,7 +160,7 @@ class UserAuto extends Component{
                                             <label>Լուսանկար</label>
                                             <input type="file" name="user_img"/>
                                         </div>
-                                            <input type="hidden" name="user_id" value="1"/>
+                                            <input type="hidden" name="user_id" value={this.props.user.data.id}/>
                                        <div className="items">
                                            <button type='submit'>
                                                Ավելացնել
@@ -173,12 +173,12 @@ class UserAuto extends Component{
                         </Modal>
 
                     </div>
-                <MyAuto/>
+                {this.props.auto.data.status?<MyAuto />: ''}
+
             </div>
         )
     }
 }
-
 const MakeStateToProps = (state) => {
     return state
 }
