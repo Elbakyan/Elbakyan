@@ -4,8 +4,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarkedAlt,faCity,faAt,faPhoneAlt,faCog,faEnvelope,faTags,faClipboard} from '@fortawesome/free-solid-svg-icons';
 import UserAuto from "./UserAuto";
 import {connect} from "react-redux";
+<<<<<<< HEAD
+gi
+=======
 import Setings from "./Setings";
 
+>>>>>>> fb92e59a4a9733753e33543eed9da35893fdb679
 
 class User extends Component{
     constructor(props) {

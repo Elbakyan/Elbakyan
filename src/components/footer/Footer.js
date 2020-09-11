@@ -22,7 +22,7 @@ export default function (){
             name:'(374)-93-888044'
         },
         {
-            icon:<Icon icon="envelope" size="lg" />,
+            icon:<Icon icon="envelope" size="1x" />,
             name:'info@v8.am'
         },
     ]
