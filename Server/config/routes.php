@@ -15,6 +15,8 @@ return array(
 	'auto/model' => 'json/GetAutoById/$1',
 	//Get auto mark
 	'auto' => 'json/auto',
+	//Get services
+    'services' => 'json/GetServices',
 	//Logout user
 	'logout' => 'user/Logout',
     //add user auto

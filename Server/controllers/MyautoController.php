@@ -58,6 +58,7 @@ class MyautoController
                 ]);
             }
         }
+        return;
     }
     public function actionDeleteUserAuto(){
         global  $mysql;
@@ -78,7 +79,7 @@ class MyautoController
 
 
         }
-
+        return;
     }
 
 }

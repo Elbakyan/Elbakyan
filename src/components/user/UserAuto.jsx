@@ -2,18 +2,10 @@ import React,{Component} from 'react';
 import  {Button,Modal} from "rsuite";
 import {City, GetMyAuto, Model} from "../../redux/action/actions";
 import {connect} from "react-redux";
-<<<<<<< HEAD
 import {POST, TEST_POST} from "../config/Requsest";
 import {Url} from "../config/Url";
 import MyAuto from "./MyAuto";
-=======
 
-import {POST, TEST_POST} from "../config/Requsest";
-import {Url} from "../config/Url";
-
-import MyAuto from "./MyAuto";
-
->>>>>>> fb92e59a4a9733753e33543eed9da35893fdb679
 
 class UserAuto extends Component{
     constructor(props) {
@@ -115,7 +107,7 @@ class UserAuto extends Component{
                                                     return (
                                                         <option
                                                             key={color.color}
-                                                            value={color.color}
+                                                            value={color.name}
                                                             style={{color:color.color,backgroundColor: '#101423'}}
                                                         >
                                                             {color.name}

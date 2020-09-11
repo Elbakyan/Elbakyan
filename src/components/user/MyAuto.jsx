@@ -22,7 +22,9 @@ class MyAuto extends Component {
         document.location.reload(true)
     }
     render() {
+
         return (
+
                     <div className="my_auto">
 
                         {

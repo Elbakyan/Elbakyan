@@ -83,6 +83,7 @@ class UserController
                 'status' => false,
             ]);
         }
+        return;
     }
     public function actionLogout()
     {
@@ -91,6 +92,7 @@ class UserController
         session_unset();
         session_destroy();
         header('Location: https://elbakyan.am/');
+        return;
     }
     public function actionUpdate(){
         $Error = [];
@@ -161,5 +163,6 @@ class UserController
                 ]);
             }
         }
+        return;
     }
 }
