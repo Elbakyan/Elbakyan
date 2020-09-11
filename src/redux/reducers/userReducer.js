@@ -2,7 +2,8 @@
 import {USER_STATUS_EXIST} from "../types";
 
 const initialState = {
-    status: undefined
+    status: undefined,
+
 }
 
 export default function userReducer(state = initialState, action) {

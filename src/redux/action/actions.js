@@ -28,7 +28,9 @@ export function Location() {
 export function City(e) {
     return async (dispach) => {
         let data = new FormData();
-        data.append('id', e.target.selectedIndex+1);
+
+            data.append('id', e.target.selectedIndex+1);
+
         POST(Url.city, data).then(data=> {
             dispach({
                 type: GET_CITY,

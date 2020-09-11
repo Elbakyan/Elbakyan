@@ -2,8 +2,6 @@
 session_start();
 header("Access-Control-Allow-Origin: *");
 define('ROOT', dirname(__FILE__));
-// FRONT COTROLLER
-
 // 1. Общие настройки
 //
 //ini_set('display_errors', 1);

@@ -9,18 +9,7 @@ export const Url = {
     model: 'https://elbakyan.am/Server/auto/model',
     addauto: 'https://elbakyan.am/Server/AddUserAuto',
     getUserAuto: 'https://elbakyan.am/Server/GetUserAuto',
-    DeleteUserAuto: 'https://elbakyan.am/Server/DeleteUserAuto'
+    DeleteUserAuto: 'https://elbakyan.am/Server/DeleteUserAuto',
+    UserUpdate: 'https://elbakyan.am/Server/UbdateUserData'
 
 }
-// export const Url = {
-//     login: 'http://test.local/Server/login',
-//     existUser: 'http://test.local/Server/corona',
-//     logout: 'http://test.local/Server/logout',
-//     location: 'http://test.local/Server/location',
-//     city: 'http://test.local/Server/location/city',
-//     registration: 'http://test.local/Server/Server/Reg',
-//     auto: 'http://test.local/Server/auto',
-//     model: 'http://test.local/Server/auto/model',
-//     addauto: 'http://test.local/Server/AddUserAuto'
-//
-// }

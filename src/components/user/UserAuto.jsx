@@ -32,7 +32,7 @@ class UserAuto extends Component{
         });
     }
     componentDidMount() {
-        this.props.dispatch(GetMyAuto(this.props.user.data.id))
+        this.props.dispatch(GetMyAuto(this.props.user.id))
     }
 
     AddAuto(e) {
@@ -51,7 +51,8 @@ class UserAuto extends Component{
             <div className="auto">
                 <div className="auto__header">
                     <div className="auto__title">
-                        <h2>Դուք դեռ չունեք գրանցված ավտոմեենա․․․․</h2>
+                        {this.props.auto.data.status?<h2>Ավտոմեքենաների ցանկ․․․</h2>: <h2>Դուք դեռ չունեք գրանցված ավտոմեենա․․․․</h2>}
+
                     </div>
                     <div className="add_auto">
                         <Button color="violet" onClick={() => this.open('sm')}>Ավելացնել Ավտոմեենա․․․</Button>
@@ -160,7 +161,7 @@ class UserAuto extends Component{
                                             <label>Լուսանկար</label>
                                             <input type="file" name="user_img"/>
                                         </div>
-                                            <input type="hidden" name="user_id" value={this.props.user.data.id}/>
+                                            <input type="hidden" name="user_id" value={this.props.user.id}/>
                                        <div className="items">
                                            <button type='submit'>
                                                Ավելացնել

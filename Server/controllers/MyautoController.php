@@ -62,11 +62,20 @@ class MyautoController
     public function actionDeleteUserAuto(){
         global  $mysql;
         if (!empty($_POST)){
-            $res = $mysql->query( "DELETE FROM `user_auto` WHERE `user_auto`.`id` = $_POST[id]");
-            echo  json_encode(['status' => $res]);
-            if ($_POST['img_name'] != 'https://elbakyan.am/Server/img/default.png'){
-                unlink($_POST['img_name']);
+            $data = $mysql->query("SELECT `user_id`,`vin`,`type` FROM `user_auto` WHERE `id` = $_POST[id]");
+            $tmp = [];
+            while ($row = $data->fetch_assoc()){
+                $tmp = $row;
             }
+            $path = './img/user/auto/' . $tmp['user_id']. '.' . $tmp['vin'] . $tmp['type'];
+            unlink($path);
+            $res = $mysql->query( "DELETE FROM `user_auto` WHERE `user_auto`.`id` = $_POST[id]");
+            echo  json_encode([
+                'status' => $res
+                ]);
+
+
+
 
         }
 

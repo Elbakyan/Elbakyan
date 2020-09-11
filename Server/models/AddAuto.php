@@ -14,8 +14,8 @@ class AddAuto
             }
 
 
-            $res = $mysql->query("INSERT INTO `user_auto` (`id`, `user_id`, `mark`, `model`, `color`, `year`, `engine_power`, `auto_number`, `vin`, `img`, `data`) 
-                                        VALUES (NULL, '$data[user_id]', '$data[mark]', '$data[model]', '$data[color]', '$data[year]', '$data[engine]', '$data[auto_number]', '$data[vin]', '$img_name_for_db', CURRENT_TIMESTAMP);");
+            $res = $mysql->query("INSERT INTO `user_auto` (`id`, `user_id`, `mark`, `model`, `color`, `year`, `engine_power`, `auto_number`, `vin`, `img`,`type`, `data`) 
+                                        VALUES (NULL, '$data[user_id]', '$data[mark]', '$data[model]', '$data[color]', '$data[year]', '$data[engine]', '$data[auto_number]', '$data[vin]', '$img_name_for_db','.$tmp_img_name[1]', CURRENT_TIMESTAMP);");
             if ($res){
                 http_response_code(201);
                 echo json_encode([

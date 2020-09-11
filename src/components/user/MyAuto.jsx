@@ -13,9 +13,12 @@ class MyAuto extends Component {
     deliteAuto(e) {
         let data = new FormData();
         data.append('id', e.target.id)
-        data.append('img_name',e.target.dataset.img_name)
+        data.append('user',e.target.dataset.user)
+        data.append('vin',e.target.dataset.vin)
 
-        POST(Url.DeleteUserAuto,data)
+        POST(Url.DeleteUserAuto,data).then(res=>{
+            // console.log(res)
+        })
         document.location.reload(true)
     }
     render() {
@@ -69,7 +72,7 @@ class MyAuto extends Component {
                                             </ul>
                                         </nav>
                                         <div className="my_auto_button">
-                                            <Button id={id} color={"red"} data-img_name={img} onClick={this.deliteAuto}>Հեռացնել</Button>
+                                            <Button id={id} color={"red"} onClick={this.deliteAuto}>Հեռացնել</Button>
                                         </div>
                                     </div>
                                 </div>
