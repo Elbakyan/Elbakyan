@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarkedAlt,faCity,faAt,faPhoneAlt,faCog,faEnvelope,faTags,faClipboard} from '@fortawesome/free-solid-svg-icons';
 import UserAuto from "./UserAuto";
 import {connect} from "react-redux";
-
+gi
 
 class User extends Component{
     constructor(props) {
