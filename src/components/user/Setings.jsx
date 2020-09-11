@@ -21,7 +21,9 @@ import Alert from "rsuite/es/Alert";
          let data = new FormData(e.target);
          POST(Url.UserUpdate,data).then(res => {
              if (res.status == true) {
+
                  Alert.success(res.message)
+                 this.props.close()
                  setTimeout(() => {
                      document.location.reload(true)
                  },1000)
@@ -104,7 +106,7 @@ import Alert from "rsuite/es/Alert";
                                 </label>
                                 <input type="hidden" name='id' value={this.props.user.id}/>
                                 <input type="hidden" name='img' value={this.props.user.data.img}/>
-                                <Button color="violet" type="submit" style={{marginTop: ''}}>Գրանցվել</Button>
+                                <Button color="violet" type="submit" style={{marginTop: ''}}>Հաստատել</Button>
                             </form>
                         </div>
                     </Modal.Body>

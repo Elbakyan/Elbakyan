@@ -96,10 +96,8 @@ class UserController
         $Error = [];
         global  $mysql;
         if (!empty($_POST)){
-            $tmp_img_name = explode('/',$_FILES['avatar']['type']);
-            $img_name  =ROOT . '/img/user/avatar/'.$_POST['id']. '.'.$tmp_img_name[1];
-            $img_name_for_db = 'https://elbakyan.am/Server/img/user/avatar/'.$_POST['id'].'.'.$tmp_img_name[1];
-            $res = $mysql->query("UPDATE `user` SET 
+
+           $mysql->query("UPDATE `user` SET 
                                                 `name` = '$_POST[name]',  
                                                 `surname` = '$_POST[surname]', 
                                                 `phone` = $_POST[phone], 
@@ -117,10 +115,35 @@ class UserController
                 }
          }
             if (!empty($_FILES['avatar']['name'])){
-               $mysql->query("UPDATE `user` SET 
+                $tmp_img_name = explode('/',$_FILES['avatar']['type']);
+                if (
+                    $tmp_img_name[1] == 'jpeg' ||
+                    $tmp_img_name[1] == 'jpg' ||
+                    $tmp_img_name[1] == 'png' ||
+                    $tmp_img_name[1] == 'svg')
+                {
+
+                    $img_name  = ROOT . '/img/user/avatar/'.'-'.time(). '.'.$tmp_img_name[1];
+                    $img_name_for_db = 'https://elbakyan.am/Server/img/user/avatar/'.'-'.time().'.'.$tmp_img_name[1];
+
+                    // create link from delite img in server
+                    $tmp_link = $mysql->query("SELECT `img` FROM `user` WHERE `id` = '$_POST[id]'");
+                    $array_links = explode('-', $tmp_link->fetch_assoc()['img']);
+                    $link_from_delite_img ='-' . $array_links[1];
+                    $path = './img/user/avatar/'.$link_from_delite_img ;
+
+                    $mysql->query("UPDATE `user` SET 
                                                 `img` = '$img_name_for_db' 
                                                 WHERE `user`.`id` = '$_POST[id]'");
-                move_uploaded_file($_FILES['avatar']['tmp_name'],$img_name);
+                    move_uploaded_file($_FILES['avatar']['tmp_name'],$img_name);
+                    unlink($path);
+
+
+                }else{
+                    $Error[] = 'Ներբեռնել միայն jpeg,jpg,png,svg ֆորմատի լուսանկար';
+                }
+
+
             }else{
                 $mysql->query("UPDATE `user` SET 
                                                 `img` = '$_POST[img]' 

@@ -163,9 +163,8 @@ class UserAuto extends Component{
                                         </div>
                                             <input type="hidden" name="user_id" value={this.props.user.id}/>
                                        <div className="items">
-                                           <button type='submit'>
-                                               Ավելացնել
-                                           </button>
+                                           <Button type="submit" color="violet">Ավելացնել</Button>
+
                                        </div>
 
 
