@@ -162,7 +162,7 @@ class UserAuto extends Component{
                                             <input type="file" name="user_img"/>
                                         </div>
                                             <input type="hidden" name="user_id" value={this.props.user.id}/>
-                                       <div className="items">
+                                       <div className="items ">
                                            <Button type="submit" color="violet">Ավելացնել</Button>
 
                                        </div>
