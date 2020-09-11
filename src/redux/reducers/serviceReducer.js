@@ -5,7 +5,7 @@ const initialState = {
 
 }
 
-export default function userReducer(state = initialState, action) {
+export default function serviceReducer(state = initialState, action) {
 
     switch (action.type) {
         case GET_SERVICE_NAME:

@@ -34,6 +34,7 @@ class AppHeader extends  Component{
                             </li>
                             <li>
                                 <a href="#">Ծառայություններ</a>
+                                <HideNav value={this.props.services.services} />
                             </li>
                         </ul>
                     </nav>
