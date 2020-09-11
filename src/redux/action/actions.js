@@ -1,5 +1,13 @@
 import {Url} from '../../components/config/Url'
-import {USER_STATUS_EXIST, GET_SIRCLE, GET_CITY, GET_AUTO_MARK, GET_AUTO_MODEL, GET_MY_AUTO} from "../types";
+import {
+    USER_STATUS_EXIST,
+    GET_SIRCLE,
+    GET_CITY,
+    GET_AUTO_MARK,
+    GET_AUTO_MODEL,
+    GET_MY_AUTO,
+    GET_SERVICE_NAME
+} from "../types";
 import {POST} from "../../components/config/Requsest";
 import Login from "../../components/login/Login";
 
@@ -50,6 +58,7 @@ export function Auto() {
         })
     }
 }
+
 export function Model(e) {
     return async (dispach) => {
         let data = new FormData();
@@ -77,5 +86,17 @@ export function GetMyAuto(id) {
 
     }
 }
+
+export function Services() {
+    return async (dispach) => {
+        const response = await fetch(Url.service)
+        const json = await response.json();
+        dispach({
+            type: GET_SERVICE_NAME,
+            payload: json
+        })
+    }
+}
+
 
 
