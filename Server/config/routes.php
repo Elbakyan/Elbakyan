@@ -2,6 +2,7 @@
 return array(
 	//Login user 
 	'login' => 'user/login',
+    'UbdateUserData' => 'user/Update',
 	//Registration new user 
 	'Reg' => 'user/Reg',
 	//checks whether you signed in or not
@@ -19,6 +20,8 @@ return array(
     //add user auto
     'AddUserAuto' => 'myauto/index',
     //add user auto
-    'GetUserAuto' => 'myauto/GetUserAuto'
+    'GetUserAuto' => 'myauto/GetUserAuto',
+    'DeleteUserAuto' => 'myauto/DeleteUserAuto',
+
 	
 );

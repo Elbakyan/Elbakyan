@@ -1,4 +1,4 @@
-import {GET_AUTO_MARK, GET_AUTO_MODEL} from "../types";
+import {GET_AUTO_MARK, GET_AUTO_MODEL, GET_MY_AUTO} from "../types";
 
 
 const initialState = {
@@ -174,6 +174,7 @@ const initialState = {
         temp.push("7.0")
         return temp;
     })(),
+    data:''
 }
 
 export default function userReducer(state = initialState, action) {
@@ -183,6 +184,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, mark: action.payload};
         case GET_AUTO_MODEL:
             return {...state, model: action.payload};
+        case GET_MY_AUTO:
+            return {...state, data: action.payload};
         default:
             return state
 

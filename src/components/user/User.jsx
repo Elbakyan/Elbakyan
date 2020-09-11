@@ -4,23 +4,44 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarkedAlt,faCity,faAt,faPhoneAlt,faCog,faEnvelope,faTags,faClipboard} from '@fortawesome/free-solid-svg-icons';
 import UserAuto from "./UserAuto";
 import {connect} from "react-redux";
+<<<<<<< HEAD
 gi
+=======
+import Setings from "./Setings";
+
+>>>>>>> fb92e59a4a9733753e33543eed9da35893fdb679
 
 class User extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            show: false,
+            overflow: true,
+            message: ''
+        };
+        this.close = this.close.bind(this);
+        this.open = this.open.bind(this);
+    }
+    close() {
+        this.setState({ show: false });
+    }
+    open(event) {
+        event.preventDefault()
+        this.setState({ show: true });
     }
     render() {
 
         return(
+
             <section className="user_container">
+                <Setings open={this.open} close={this.close} state={this.state}/>
                 <div className="container row">
                     <div className="user">
                         <div className="user__img">
-                            <img src="https://elbakyan.am/Server/img/default.svg" alt=""/>
+                            <img src={this.props.user.data.img} alt=""/>
                         </div>
                         <div className="user__name">
-                            <p>{this.props.user.data.name + ' ' + this.props.user.data.surname}</p>
+                            <p>{this.props.user.data.name + ' ' + this.props.user.data.surname }</p>
                         </div>
 
                         <div className="user__nav">
@@ -35,11 +56,7 @@ class User extends Component{
                                         <FontAwesomeIcon icon={faTags} className="nav__icon"/>
                                         <a href="">Խանութներ</a>
                                     </li>
-                                    <li >
-                                        <FontAwesomeIcon icon={faClipboard} className="nav__icon"/>
-                                        <a href="">Նշումներ</a>
-                                    </li>
-                                    <li >
+                                    <li onClick={this.open}>
                                         <FontAwesomeIcon icon={faCog} className="nav__icon"/>
                                         <a href="">Կարգավորումներ</a>
                                     </li>

@@ -27,7 +27,6 @@ class App extends Component{
     }
 
     render() {
-        console.log(this.props)
         switch (this.props.user.status){
             case undefined:
                 return ( <Loader size="lg" backdrop content="loading..." vertical /> )

@@ -1,46 +1,55 @@
 import React,{Component} from 'react';
 import  {Button,Modal} from "rsuite";
-import {City, Model} from "../../redux/action/actions";
+import {City, GetMyAuto, Model} from "../../redux/action/actions";
 import {connect} from "react-redux";
+<<<<<<< HEAD
 import {POST, TEST_POST} from "../config/Requsest";
 import {Url} from "../config/Url";
 import MyAuto from "./MyAuto";
+=======
+
+import {POST, TEST_POST} from "../config/Requsest";
+import {Url} from "../config/Url";
+
+import MyAuto from "./MyAuto";
+
+>>>>>>> fb92e59a4a9733753e33543eed9da35893fdb679
 
 class UserAuto extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            show: false
+            show: false,
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
     }
-    componentDidMount() {
-
-        let data = new FormData()
-        data.append('user_id', this.props.user.data.id);
-        POST(Url.getUserAuto,data).then(res => {
-            console.log(res)
-        })
-    }
-
     close() {
         this.setState({
-            show: false
+            show: false,
+
         });
     }
     open(size) {
         this.setState({
             size,
-            show: true
+            show: true,
+
         });
     }
+    componentDidMount() {
+        this.props.dispatch(GetMyAuto(this.props.user.id))
+    }
+
     AddAuto(e) {
         e.preventDefault();
         let data = new FormData(e.target)
         POST(Url.addauto,data).then(res => {
-            console.log(res)
+           if (res.status){
+               document.location.reload(true)
+           }
         })
+
 
     }
     render() {
@@ -48,7 +57,8 @@ class UserAuto extends Component{
             <div className="auto">
                 <div className="auto__header">
                     <div className="auto__title">
-                        <h2>Դուք դեռ չունեք գրանցված ավտոմեենա․․․․</h2>
+                        {this.props.auto.data.status?<h2>Ավտոմեքենաների ցանկ․․․</h2>: <h2>Դուք դեռ չունեք գրանցված ավտոմեենա․․․․</h2>}
+
                     </div>
                     <div className="add_auto">
                         <Button color="violet" onClick={() => this.open('sm')}>Ավելացնել Ավտոմեենա․․․</Button>
@@ -157,23 +167,22 @@ class UserAuto extends Component{
                                             <label>Լուսանկար</label>
                                             <input type="file" name="user_img"/>
                                         </div>
-                                            <input type="hidden" name="user_id" value="1"/>
+                                            <input type="hidden" name="user_id" value={this.props.user.id}/>
                                        <div className="items">
-                                           <button type='submit'>
-                                               Ավելացնել
-                                           </button>
+                                           <Button type="submit" color="violet">Ավելացնել</Button>
+
                                        </div>
                                 </form>
                             </Modal.Body>
                         </Modal>
 
                     </div>
-                <MyAuto/>
+                {this.props.auto.data.status?<MyAuto />: ''}
+
             </div>
         )
     }
 }
-
 const MakeStateToProps = (state) => {
     return state
 }
