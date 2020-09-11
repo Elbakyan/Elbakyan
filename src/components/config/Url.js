@@ -10,6 +10,6 @@ export const Url = {
     addauto: 'https://elbakyan.am/Server/AddUserAuto',
     getUserAuto: 'https://elbakyan.am/Server/GetUserAuto',
     DeleteUserAuto: 'https://elbakyan.am/Server/DeleteUserAuto',
-    UserUpdate: 'https://elbakyan.am/Server/UbdateUserData'
-
+    UserUpdate: 'https://elbakyan.am/Server/UbdateUserData',
+    service:'https://elbakyan.am/Server/Service'
 }
