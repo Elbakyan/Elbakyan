@@ -4,8 +4,7 @@ import {Button,Avatar,Badge,Icon} from "rsuite";
 import {Url}from '../config/Url';
 import HideNav from "../nav/Hide.Nav";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-
+import {Link} from '../../redux/action/linkAction'
 
 class UserHeader extends  Component{
 
@@ -33,8 +32,10 @@ class UserHeader extends  Component{
                                 <HideNav value={this.props.services.services} width="350px"/>
                             </li>
                             <li>
-                                <a href='/score'>Խանութը</a>
-
+                                <a data-name='score' onClick={(e)=>{
+                                    console.log(e.target.dataset.name)
+                                    this.props.dispatch(Link(e.target.dataset.name))
+                                }} href="#">Խանութը</a>
                             </li>
                         </ul>
                     </nav>

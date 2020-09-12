@@ -23,7 +23,11 @@ return array(
     'AddUserAuto' => 'myauto/index',
     //add user auto
     'GetUserAuto' => 'myauto/GetUserAuto',
+    //Delite auto
     'DeleteUserAuto' => 'myauto/DeleteUserAuto',
+    //Add Score
+    'AddScoreAccount' => 'score/AddScoreAccount'
+
 
 	
 );

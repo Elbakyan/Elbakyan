@@ -41,7 +41,7 @@ class JsonController
         require ROOT . '/models/Json.php';
 
         Json::GetServices('service');
-        return;
+        return true;
     }
 
 }

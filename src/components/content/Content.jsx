@@ -2,11 +2,7 @@ import React, {Component} from 'react';
 import User from "../user/User";
 import Score from "../score/Score";
 import {connect} from "react-redux";
-import LogScore from "../score/LogScore";
-import {Route,Router,Link,Switch} from "react-router-dom";
-
-<<<<<<< HEAD
-import Score from "../score/Score";
+// import LogScore from "../score/LogScore";
 
 class  Content extends Component{
     constructor(props) {
@@ -24,35 +20,14 @@ class  Content extends Component{
                 )
             case 'score':
                 return (
-                    <LogScore />
+                    <h2>salam</h2>
+                    // <LogScore />
                 )
         }
     }
 }
-
-
 const MakeStateToProps = (state) => {
     return state.userLink
-=======
-
-
-class Content extends Component{
-    constructor(props) {
-        super(props);
-
-    }
-
-    render(){
-        return (
-
-                <div className='user_content'>
-                    <User />
-                    <Score />
-                </div>
-
-        )
-    }
->>>>>>> 97e7f44467573e004815054f9aff327162c6823c
 }
 const MainContent = connect(MakeStateToProps)(Content)
 
