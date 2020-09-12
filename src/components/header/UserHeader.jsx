@@ -4,11 +4,13 @@ import {Button,Avatar,Badge,Icon} from "rsuite";
 import {Url}from '../config/Url';
 import HideNav from "../nav/Hide.Nav";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 class UserHeader extends  Component{
 
     render() {
+        console.log(this.props)
         return(
             <header>
                 <div className="container row header_container">
@@ -20,14 +22,19 @@ class UserHeader extends  Component{
                     <nav className="header__nav">
                         <ul>
                             <li>
+                                <a href='/'>Գլխավեր</a>
+                            </li>
+                            <li>
                                 <a href="#">Պահեստամասեր</a>
-                                <HideNav value={this.props.auto.mark}/>
+                                <HideNav value={this.props.auto.mark} width="250px"/>
                             </li>
                             <li>
                                 <a href="#">Ծառայություններ</a>
+                                <HideNav value={this.props.services.services} width="350px"/>
                             </li>
                             <li>
-                                <a href="#">Խանութը</a>
+                                <a href='/score'>Խանութը</a>
+
                             </li>
                         </ul>
                     </nav>

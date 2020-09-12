@@ -17,7 +17,7 @@ class AppHeader extends  Component{
 
     }
     render() {
-
+        console.log(this.props)
         return(
             <header>
                 <div className="container row header_container">
@@ -30,11 +30,11 @@ class AppHeader extends  Component{
                         <ul>
                             <li>
                                 <a href="#">Պահեստամասեր</a>
-                               <HideNav value={this.props.auto.mark} />
+                               <HideNav value={this.props.auto.mark} width="250px"/>
                             </li>
                             <li>
                                 <a href="#">Ծառայություններ</a>
-                                <HideNav value={this.props.services.services} />
+                                <HideNav value={this.props.services.services} width="350px"/>
                             </li>
                         </ul>
                     </nav>

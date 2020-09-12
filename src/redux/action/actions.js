@@ -9,7 +9,6 @@ import {
     GET_SERVICE_NAME
 } from "../types";
 import {POST} from "../../components/config/Requsest";
-import Login from "../../components/login/Login";
 
 
 export function userExist() {

@@ -7,13 +7,12 @@ import "./Hide.Nav.scss"
         super(props);
     }
     render() {
-        console.log()
         return(
-            <ul className="Hide_Nav">
+            <ul className="Hide_Nav" style={{width:this.props.width}}>
                 {this.props.value.map(object => {
                     return (
                         <li key={object.id}>
-                            <img src={object.img} alt=""/>
+                            {object.hasOwnProperty('img')? <img src={object.img} alt=""/>: ''}
                             <a href="">{object.name}</a>
                         </li>)
                 })}
