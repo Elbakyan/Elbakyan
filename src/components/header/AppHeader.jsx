@@ -38,6 +38,7 @@ class AppHeader extends  Component{
                             </li>
                         </ul>
                     </nav>
+
                     <div className="Reg_Aut_container" style={{display:"flex"}}>
                         <Reg/>
                         <Login/>
