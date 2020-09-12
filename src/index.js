@@ -19,7 +19,7 @@ const MakeStateToProps = (state) => {
 const Main = connect(MakeStateToProps)(App)
 const app = (
     <Provider store={store}>
-        <Main/>
+            <Main/>
     </Provider>
 )
 ReactDOM.render(app,
