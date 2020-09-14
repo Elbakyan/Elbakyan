@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import {Loader} from 'rsuite';
 import Slider from "./components/slider/Slider";
 import Content from "./components/content/Content";
+import ReactAudioPlayer from 'react-audio-player';
 
 
 
@@ -42,7 +43,13 @@ class App extends Component{
             case true:
                 return(
                             <div className="wrapper">
+                                <ReactAudioPlayer
+                                    src="https://elbakyan.am/Server/audio/v8.mp3"
+                                    autoPlay
+                                    onPause={() =>{setTimeout(() => {onEne}),500}}
+                                />
                                 <Header />
+
                                 <Content />
                                 <Footer />
                             </div>

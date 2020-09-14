@@ -8,10 +8,10 @@ class Score
         $Error = [];
         global $mysql;
 
-        $temp_name = $mysql->query("SELECT `name`,`email`,`phone`,`url` FROM `score` WHERE `name` = '$data[name]'");
-        $temp_email = $mysql->query("SELECT `name`,`email`,`phone`,`url` FROM `score` WHERE `email` = '$data[email]'");
-        $temp_phone= $mysql->query("SELECT `name`,`email`,`phone`,`url` FROM `score` WHERE `phone` = '$data[phone]'");
-        $temp_url = $mysql->query("SELECT `name`,`email`,`phone`,`url` FROM `score` WHERE `url` = '$data[url]'");
+        $temp_name = $mysql->query("SELECT `name`, FROM `score` WHERE `name` = '$data[name]'");
+        $temp_email = $mysql->query("SELECT `email` FROM `score` WHERE `email` = '$data[email]'");
+        $temp_phone= $mysql->query("SELECT `phone` FROM `score` WHERE `phone` = '$data[phone]'");
+        $temp_url = $mysql->query("SELECT `url` FROM `score` WHERE `url` = '$data[url]'");
 
         if ($temp_name->num_rows){
             $Error[] = 'Գրված անունով գործընկեր արդեն գոյություն ունի․․․';

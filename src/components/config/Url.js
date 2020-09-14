@@ -11,5 +11,6 @@ export const Url = {
     getUserAuto: 'https://elbakyan.am/Server/GetUserAuto',
     DeleteUserAuto: 'https://elbakyan.am/Server/DeleteUserAuto',
     UserUpdate: 'https://elbakyan.am/Server/UbdateUserData',
-    service: 'https://elbakyan.am/Server/services'
+    service: 'https://elbakyan.am/Server/services',
+    getscore: 'https://elbakyan.am/Server/GetScoreAccount'
 }

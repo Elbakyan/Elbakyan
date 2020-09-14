@@ -9,7 +9,6 @@ import {Link} from '../../redux/action/linkAction'
 class UserHeader extends  Component{
 
     render() {
-        console.log(this.props)
         return(
             <header>
                 <div className="container row header_container">
@@ -33,7 +32,6 @@ class UserHeader extends  Component{
                             </li>
                             <li>
                                 <a data-name='score' onClick={(e)=>{
-                                    console.log(e.target.dataset.name)
                                     this.props.dispatch(Link(e.target.dataset.name))
                                 }} href="#">Խանութը</a>
                             </li>
