@@ -5,21 +5,35 @@ class ScoreController
 {
     private $Error = [];
     public function actionAddScoreAccount(){
-        global  $mysql;
-        $_POST['name'] = 'V8';
-        $_POST['sircle'] = 'V8';
-        $_POST['city'] = 'V8';
-        $_POST['adress'] = 'V8';
-        $_POST['phone'] = 'V8';
-        $_POST['email'] = 'V8';
-        $_POST['url'] = 'V8';
-        $_POST['img'] = 'V8';
+        require ROOT . '/models/Score.php';
+        $_POST['name'] = 'V8a';
+        $_POST['sircle'] = 'erevan';
+        $_POST['city'] = 'erebuni';
+        $_POST['adress'] = 'raffi19';
+        $_POST['phone'] = '3749a4419699';
+        $_POST['email'] = 'n@amail.ru';
+        $_POST['url'] = 'noaro.com';
+        $_POST['img'] = '';
         if (!empty($_POST)){
-            if ($_POST['name']){
-
+            if (empty($_POST['name'])){
+                $this->Error[] = 'Անունը պետք է դատարկ չլինի․․․';
+            }
+            if (empty($_POST['phone'])){
+                $this->Error[] = 'Հեռախոսահամարը պետք է դատարկ չլինի․․․';
+            }
+            if (empty($_POST['email'])){
+                $this->Error[] = 'E-mail-ը պետք է դատարկ չլինի․․․';
+            }
+            if (empty($this->Error)){
+                Score::AddScore($_POST);
+            }else{
+                echo json_encode([
+                    'status' => false,
+                    'message' => $this->Error[0]
+                ]);
             }
         }
-        print_r($mysql);
+
 
       return true;
     }
