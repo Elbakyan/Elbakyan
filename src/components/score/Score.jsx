@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import  './Score.scss'
 import {City} from "../../redux/action/actions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -13,9 +14,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import AutoParts from "./AutoParts";
 
-
-
-
 class Score extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +26,7 @@ class Score extends Component {
                 <div className="container row">
                     <div className="user">
                         <div className="user__img">
-                            <img src="https://elbakyan.am/Server/img/default.svg" alt=""/>
+                            <img src="https://elbakyan.am/Server/img/default.png" alt=""/>
                         </div>
                         <div className="user__name">
                             <p>Avtopahestamaser.am</p>
@@ -36,7 +34,6 @@ class Score extends Component {
 
                         <div className="user__nav">
                             <ul className="user__nav-ul">
-
                                 <li>
                                     <FontAwesomeIcon icon={faEnvelope} className="nav__icon"/>
                                     <a href="">Հաղորրդագրություններ</a>
@@ -68,6 +65,7 @@ class Score extends Component {
                             </div>
 
                         </div>
+
                         <div className="user__location">
                             <div className="sircle">
                                 <FontAwesomeIcon icon={faMapMarkedAlt} className="user__icon"/>
@@ -77,10 +75,10 @@ class Score extends Component {
                                 <FontAwesomeIcon icon={faCity} className="user__icon"/>
                                 <span className="city">Շենգավիթղ</span>
                             </div>
-
                         </div>
+
                     </div>
-                    <div className="auto">
+                    <div className="user_score">
                         <AutoParts />
                     </div>
                 </div>
