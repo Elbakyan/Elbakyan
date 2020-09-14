@@ -6,7 +6,8 @@ import {
     GET_AUTO_MARK,
     GET_AUTO_MODEL,
     GET_MY_AUTO,
-    GET_SERVICE_NAME
+    GET_SERVICE_NAME,
+    GET_SCORE_DATA
 } from "../types";
 import {POST} from "../../components/config/Requsest";
 
@@ -97,5 +98,17 @@ export function Services() {
     }
 }
 
+export function ScoreAction(id) {
+    return async (dispach) => {
+        let data = new FormData();
+        data.append('id', id)
+        POST(Url.getscore,data).then(res => {
+            dispach({
+                type: GET_SCORE_DATA,
+                payload: res
+            })
+        })
+    }
+}
 
 

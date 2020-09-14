@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import User from "../user/User";
 import Score from "../score/Score";
 import {connect} from "react-redux";
-// import LogScore from "../score/LogScore";
+import LogScore from "../score/LogScore";
 
 class  Content extends Component{
     constructor(props) {
@@ -12,7 +12,6 @@ class  Content extends Component{
         }
     }
     render() {
-        console.log(this.props,'Content')
         switch(this.props.link){
             case 'user':
                 return (
@@ -20,8 +19,7 @@ class  Content extends Component{
                 )
             case 'score':
                 return (
-                    <h2>salam</h2>
-                    // <LogScore />
+                    <LogScore />
                 )
         }
     }

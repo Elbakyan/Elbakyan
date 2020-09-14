@@ -14,6 +14,7 @@ import {Button, ButtonToolbar, Modal} from "rsuite";
 //     faTags
 // } from "@fortawesome/free-solid-svg-icons";
 import AutoParts from "./AutoParts";
+import {POST} from "../config/Requsest";
 
 // import {Button} from "rsuite";
 
@@ -30,6 +31,7 @@ class RegScore extends Component {
         this.open = this.open.bind(this);
     }
 
+
     close() {
         this.setState({show: false});
     }
@@ -39,7 +41,6 @@ class RegScore extends Component {
     }
 
     render() {
-        console.log(this.props)
         const {overflow, show} = this.state;
         return (
             <div className="container">

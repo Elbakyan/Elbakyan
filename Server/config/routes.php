@@ -26,7 +26,9 @@ return array(
     //Delite auto
     'DeleteUserAuto' => 'myauto/DeleteUserAuto',
     //Add Score
-    'AddScoreAccount' => 'score/AddScoreAccount'
+    'AddScoreAccount' => 'score/AddScoreAccount',
+    //Get score
+    'GetScoreAccount'=> 'score/GetScoreAccount'
 
 
 	

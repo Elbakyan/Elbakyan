@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import  './Score.scss'
-import {City} from "../../redux/action/actions";
+import {ScoreAction} from "../../redux/action/actions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faAt, faCarAlt, faCity,
@@ -13,23 +13,26 @@ import {
     faTags
 } from "@fortawesome/free-solid-svg-icons";
 import AutoParts from "./AutoParts";
+import {TEST_POST,POST} from "../config/Requsest";
+import {Url} from "../config/Url";
 
 class Score extends Component {
     constructor(props) {
         super(props);
     }
 
+
     render() {
-        console.log(this.props)
+
         return (
             <section className="user_container">
                 <div className="container row">
                     <div className="user">
                         <div className="user__img">
-                            <img src="https://elbakyan.am/Server/img/default.png" alt=""/>
+                            <img src={this.props.score.data.img} alt=""/>
                         </div>
                         <div className="user__name">
-                            <p>Avtopahestamaser.am</p>
+                            <p>{this.props.score.data.name}</p>
                         </div>
 
                         <div className="user__nav">
@@ -57,11 +60,11 @@ class Score extends Component {
                         <div className="user__info">
                             <div className="mail">
                                 <FontAwesomeIcon icon={faAt} className="user__icon"/>
-                                <span className="mail">info@avtopahestamaser.am</span>
+                                <span className="mail">{this.props.score.data.email}</span>
                             </div>
                             <div className="phone">
                                 <FontAwesomeIcon icon={faPhoneAlt} className="user__icon"/>
-                                <span className="phone">+37494555544</span>
+                                <span className="phone">{this.props.score.data.phone}</span>
                             </div>
 
                         </div>
@@ -69,11 +72,11 @@ class Score extends Component {
                         <div className="user__location">
                             <div className="sircle">
                                 <FontAwesomeIcon icon={faMapMarkedAlt} className="user__icon"/>
-                                <span className="sircle">Երևան</span>
+                                <span className="sircle">{this.props.score.data.sircle}</span>
                             </div>
                             <div className="city">
                                 <FontAwesomeIcon icon={faCity} className="user__icon"/>
-                                <span className="city">Շենգավիթղ</span>
+                                <span className="city">{this.props.score.data.city}</span>
                             </div>
                         </div>
 
