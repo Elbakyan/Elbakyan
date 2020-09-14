@@ -6,7 +6,7 @@ let {yesScore,noSocre} = {yesScore:true,noSocre:false};
 
 class LogScore extends Component {
     render() {
-        if(yesScore){
+        if(noSocre){
             return(
                 <Score />
             )
